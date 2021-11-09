@@ -1,0 +1,116 @@
+html body * {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h2 span {
+  font-size: 40px;
+  color: #219ebc;
+}
+.container {
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+  width: 45vw;
+  height: 75vh;
+  min-height: 25rem;
+  min-width: 30rem;
+  background-color: #219ebc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.board {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  background-color: #023047;
+  justify-items: stretch;
+  align-items: stretch;
+}
+.board div {
+  background-color: #219ebc;
+  font-size: 100px;
+  height: 7rem;
+  width: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.board div svg {
+  width: 50px;
+  animation-duration: 0.3s;
+  animation-name: spin;
+}
+.overlay-draw,
+.overlay-win {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #023047d8;
+  font-size: 50px;
+  color: #fff;
+  animation-duration: 1s;
+  animation-name: overlay;
+}
+.overlay-draw svg {
+  width: 30%;
+  fill: #fff;
+  stroke: #fff;
+  margin-left: 30px;
+}
+.overlay-win svg {
+  width: 50%;
+  fill: #fff;
+  stroke: #fff;
+  margin-left: 30px;
+}
+.overlay-draw button,
+.overlay-win button {
+  background-color: rgba(0, 0, 0, 0.192);
+  border: 2px solid #fff;
+  height: 40px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 20px;
+}
+@keyframes spin {
+  from {
+    transform: rotateY(180deg);
+    opacity: 0;
+  }
+  to {
+    opacity: 0.9;
+    transform: rotateY(0);
+  }
+}
+@keyframes overlay {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: #023047d8;
+  }
+}
+.os {
+  background-color: #fff;
+}
+@media screen and (max-width: 500px) {
+  .container {
+    width: 90vw;
+  }
+}
+
+
